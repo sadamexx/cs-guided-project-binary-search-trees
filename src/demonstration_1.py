@@ -26,4 +26,12 @@ class BinaryTreeNode:
 
 def maxDepth(self, root):
     # Your code here
+    #if we have an empty tree, no root, return 0
+    if root is None:
+        return 0
+    left_height = maxDepth(root.left) + 1
+    right_height = maxDepth(root.right) + 1
+
+    return max(left_height, right_height) # we want the max of the two numbers, which is why we are using max method
+
 
